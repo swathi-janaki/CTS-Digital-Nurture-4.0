@@ -1,0 +1,14 @@
+{
+  "name": "bootstrap-saas-project",
+  "version": "1.0.0",
+  "description": "sample web app to demnstrate bootstrap using npm",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass src/scss/styles.scss dist/styles.css --load-path=node_modules --no-source-map --style=compressed",
+  "watch": "sass --watch --load-path=node_modules src/scss/styles.scss dist/styles.css"
+  
+  },
+  "author": "swathi",
+  "license": "ISC"
+}

@@ -1,0 +1,15 @@
+// Just use custom-variables for your own use later (optional)
+@use "_custom-variables" as *;
+
+// Override Bootstrap variables directly in the 'with' clause
+@use "bootstrap/scss/bootstrap.scss" with (
+  $primary: #5a2a83,
+  $body-bg: #f9f9f9,
+  $font-family-base: "Segoe UI , Tahoma, Geneva, Verdana, sans-serif"
+);
+
+// Your own styles below
+h1 {
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
