@@ -1,0 +1,225 @@
+
+
+/* Style for the top welcome dashboard */
+#welcomeBanner {
+  background-color: #b700ff;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+
+/* Style for highlighted elements */
+.highlight {
+  background-color: rgb(233, 19, 215);
+  font-weight: bold;
+  padding: 0.2rem 0.4rem;
+}
+
+/* Style for images of events in the gallery */
+.gallery-img {
+  width: 100%;
+  max-width: 200px;
+  border: 3px solid #ccc;
+  border-radius: 8px;
+}
+
+/* General table styling for  complete layout */
+table {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Style for image or figure captions */
+figcaption {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #555;
+}
+
+/* Style for the form  */
+form {
+  max-width: 600px;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Label styling */
+label {
+  font-weight: bold;
+}
+
+/* Style for all input elements */
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style for the submit button */
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hover effect for buttons */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Style for form output messages */
+output {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: green;
+}
+
+
+/*  styling for feedback images */
+#feedback img {
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/*  styling for navigation bar */
+nav {
+  background-color: #333;
+  padding: 0.5rem 1rem;
+}
+
+/* Unordered list inside nav bar */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* individual list items in nav bar */
+nav ul li {
+  margin: 0 15px;
+}
+
+/* Navigation links */
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for nav links */
+nav ul li a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* Style for the promotional video element of event in gallery */
+#promoVideo {
+  border: 4px solid #ccc;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/*  style for Message below the promo video */
+#videoMessage {
+  color: green;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+/* styling card for events */
+
+.eventcard {
+  display: inline-block;
+  width: fit-content; /* Auto size to fit content */
+  margin: 20px;
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Image styling to keep it consistent */
+.eventcard img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Title below image */
+.eventcard p {
+  margin-top: 8px;
+  font-style: italic;
+  color: #333;
+}
+/* shared styles for both h3 and p tags*/
+h3, p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+/*all h2 tags style */
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* background image with color */
+body {
+  background-color: #e6f2ff; /* Fallback light blue */
+  background-image: url('../images/bg1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: rgba(20, 20, 20, 0.9); /* Semi-dark text color */
+}
+
+/* Section headers with gradient background */
+
+
+/* Navigation links with brand colors */
+nav a {
+  color: #004080; 
+}
+section h2 {
+  background: linear-gradient(90deg, #004080, #66ccff); /* Navy to light blue */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  color: #66ccff; 
+}
+
+/* Button with brand styling */
+button {
+  background-color: rgba(0, 64, 128, 0.85); 
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgba(0, 64, 128, 1); 
+}

@@ -1,1 +1,77 @@
+1. CSS Folder
 
+Path: bootstrap/css/
+Contents:
+
+    bootstrap.css
+
+    bootstrap.min.css
+
+    bootstrap-grid.css, bootstrap-grid.min.css
+
+    bootstrap-reboot.css, bootstrap-reboot.min.css
+
+    bootstrap-utilities.css, bootstrap-utilities.min.css
+
+    bootstrap.rtl.css, etc.
+
+Purpose:
+
+The CSS folder holds all the compiled CSS stylesheets used for styling your HTML components with Bootstrap.
+
+    bootstrap.css – Full, unminified version of Bootstrap's CSS. Easier to read and debug.
+
+bootstrap.min.css – Minified version of this same file (smaller size, quicker loading).
+
+    *-grid.css – Bootstrap grid system only.
+
+    *-reboot.css – Resets and normalizes browser default styles.
+
+    *-utilities.css – Bootstrap utility classes only (i.e., margin, padding, flex).
+
+    .rtl.css files – Right-to-left versions for languages such as Arabic or Hebrew.
+
+2. JS Folder
+
+Path: bootstrap/js/
+Contents:
+
+    bootstrap.bundle.js
+
+    bootstrap.bundle.min.js
+
+    bootstrap.js
+
+    bootstrap.min.js
+
+Purpose:
+
+The JS directory holds JavaScript files that drive Bootstrap's interactive elements such as modals, dropdowns, carousels, and tooltips.
+
+    bootstrap.js – The JavaScript core, unminified.
+
+    bootstrap.min.js – Minified.
+
+    bootstrap.bundle.js – Bootstrap.js along with Popper.js, needed for tooltips and dropdowns.
+
+.min.js files – Minified for production optimization.
+
+3. Icons Folder (if included)
+
+Path: bootstrap/icons/ or as an alternative download from Bootstrap Icons
+ Contents:
+
+    bootstrap-icons.css
+
+    /fonts or /svg directory with icon files
+
+    bootstrap-icons.svg
+
+
+Purpose:
+
+The icons folder includes Bootstrap's official open-source set of icons.
+
+    bootstrap-icons.css – Stylesheet to apply icons using class names.
+
+*.svg or *.woff2 files – Real icon files in other format
