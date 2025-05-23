@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Community Event Portal</title>
+
+  <style>
+    #welcomeBanner {
+      background-color: #007BFF; 
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+      padding: 0.2rem 0.4rem;
+    }
+        .gallery-img {
+      width: 100%;
+      max-width: 200px;
+      border: 3px solid #ccc;
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    figcaption {
+      margin-top: 0.5rem;
+      font-style: italic;
+      color: #555;
+    }
+        form {
+      max-width: 600px;
+      background-color: #f8f9fa;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    output {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+      color: green;
+    }
+    
+    nav {
+      background-color: #333;
+      padding: 0.5rem 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #555;
+      border-radius: 5px;
+    }
+
+
+  </style>
+</head>
+<body>
+
+ 
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="help.html" target="_blank">Help</a></li>
+    </ul>
+  </nav>
+
+  
+  <div id="welcomeBanner">
+    <p>Welcome back,Community Member!</p>
+    <p><span style="color: red; font-weight: bold;">Special Offer:</span> Register now to get a free city pass!</p>
+  </div>
+
+  
+  <main>
+
+   
+    <section id="home">
+      <h1 class="highlight">Local Community Event Portal</h1>
+      <p>Use this portal to find, register, and attend local events.</p>
+    </section>
+
+   
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <p class="highlight">Don’t miss our summer festival next week!</p>
+    </section>
+        
+    <section id="gallery">
+      <h2>Community Event Gallery</h2>
+      <table>
+        <tr>
+          <td>
+            <figure>
+              <img src="../images/springfestival.png" alt="Spring Festival" title="Spring Festival " class="gallery-img">
+              <figcaption>Spring Festival</figcaption>
+            </figure>
+          </td>
+          <td>
+            <figure>
+              <img src="../images/cleanupdrive.png" alt="Neighborhood Cleanup" title="Cleanup Drive " class="gallery-img">
+              <figcaption>Cleanup Drive</figcaption>
+            </figure>
+          </td>
+          <td>
+            <figure>
+              <img src="../images/fooddrive.png" alt="Food Drive" title="Food Drive" class="gallery-img">
+              <figcaption>Food Drive</figcaption>
+            </figure>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <figure>
+              <img src="../images/artshow.png" alt="Art Show" title="Art Show " class="gallery-img">
+              <figcaption>Art Show</figcaption>
+            </figure>
+          </td>
+          <td>
+            <figure>
+              <img src="../images/movienight.png" alt="Movie Night" title="Movie Night " class="gallery-img">
+              <figcaption>Movie Night</figcaption>
+            </figure>
+          </td>
+          <td>
+            <figure>
+              <img src="../images/yoga.png" alt=" Yoga" title="Yoga " class="gallery-img">
+              <figcaption>Yoga Session</figcaption>
+            </figure>
+          </td>
+        </tr>
+      </table>
+    </section>
+        
+    <section id="registration">
+      <h2>Register for an Event</h2>
+      <form id="eventForm" onsubmit="showConfirmation(event)">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="enter full name" required autofocus><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="enter mail id " required><br><br>
+
+        <label for="date">Event Date:</label><br>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="type">Event Type:</label><br>
+        <select id="type" name="type" required>
+          <option value="">--Select--</option>
+          <option value="festival">Festival</option>
+          <option value="cleanup">Cleanup Drive</option>
+          <option value="workshop">Workshop</option>
+          <option value="yoga">Yoga</option>
+        </select><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" placeholder="Your message..." rows="4" cols="50"></textarea><br><br>
+
+        <button type="submit">Register</button>
+      </form>
+
+      <output id="confirmationMessage"></output>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Have questions? Reach out to your local city council here.</p>
+    </section>
+
+  </main>
+  <script>
+  function showConfirmation(event) {
+    event.preventDefault(); // Prevent actual form submission
+    const name = document.getElementById('name').value;
+    const output = document.getElementById('confirmationMessage');
+    output.innerHTML = `Thank you, <strong>${name}</strong>, for registering! We'll contact you soon.`;
+  }
+</script>
+  <footer>
+    <p>&copy; 2025 Local City Council. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

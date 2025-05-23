@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Community Event Portal</title>
+
+  <style>
+    #welcomeBanner {
+      background-color: #007BFF; 
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+      padding: 0.2rem 0.4rem;
+    }
+        .gallery-img {
+      width: 100%;
+      max-width: 200px;
+      border: 3px solid #ccc;
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    figcaption {
+      margin-top: 0.5rem;
+      font-style: italic;
+      color: #555;
+    }
+        form {
+      max-width: 600px;
+      background-color: #f8f9fa;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    output {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+      color: green;
+    }
+    #feedback img {
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+    }
+    
+    nav {
+      background-color: #333;
+      padding: 0.5rem 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #555;
+      border-radius: 5px;
+    }
+        #promoVideo {
+      border: 4px solid #ccc;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    #videoMessage {
+      color: green;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="help.html" target="_blank">Help</a></li>
+    </ul>
+  </nav>
+
+
+  <div id="welcomeBanner">
+    <p>Welcome back,Community Member!</p>
+    <p><span style="color: red; font-weight: bold;">Special Offer:</span> Register now to get a free city pass!</p>
+  </div>
+
+  <main>
+
+  
+    <section id="home">
+      <h1 class="highlight">Local Community Event Portal</h1>
+      <p>Use this portal to find, register, and attend local events.</p>
+    </section>
+
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <p class="highlight">Don’t miss our summer festival next week!</p>
+    </section>
+       
+    <section id="gallery">
+      <h2>Community Event Gallery</h2>
+      <table>
+        <tr>
+          <td>
+            <figure>
+              <img src="../images/springfestival.png" alt="Spring Festival" title="Spring Festival " class="gallery-img">
+              <figcaption>Spring Festival</figcaption>
+            </figure>
+          </td>
+          <td>
+            <figure>
+              <img src="../images/cleanupdrive.png" alt="Neighborhood Cleanup" title="Cleanup Drive " class="gallery-img">
+              <figcaption>Cleanup Drive</figcaption>
+            </figure>
+          </td>
+          <td>
+            <figure>
+              <img src="../images/fooddrive.png" alt="Food Drive" title=" Food Drive" class="gallery-img">
+              <figcaption>Food Drive</figcaption>
+            </figure>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <figure>
+              <img src="../images/artshow.png" alt=" Art Show" title="Art Show " class="gallery-img">
+              <figcaption>Art Show</figcaption>
+            </figure>
+          </td>
+          <td>
+            <figure>
+              <img src="../images/movienight.png" alt=" Movie Night" title="Movie Night " class="gallery-img">
+              <figcaption>Movie Night</figcaption>
+            </figure>
+          </td>
+          <td>
+            <figure>
+              <img src="../images/yoga.png" alt="Yoga" title="Yoga " class="gallery-img">
+              <figcaption>Yoga Session</figcaption>
+            </figure>
+          </td>
+        </tr>
+      </table>
+      <button id="findNearbyBtn">Find Nearby Events</button>
+<div id="locationInfo"></div>
+<div id="nearestEvent"></div>
+
+    </section>
+        
+    <section id="registration">
+      <h2>Register for an Event</h2>
+      <form id="eventForm" onsubmit="showConfirmation(event)">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Your full name" required autofocus><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required><br><br>
+
+        <label for="date">Event Date:</label><br>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="type">Event Type:</label><br>
+        <select id="type" name="type" onchange="showFee(); savePreference()"required>
+          <option value="">--Select--</option>
+          <option value="festival">Festival</option>
+          <option value="cleanup">Cleanup Drive</option>
+          <option value="workshop">Workshop</option>
+          <option value="yoga">Yoga</option>
+        </select><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" placeholder="Your message..." rows="4" cols="50"></textarea><br><br>
+
+        <button type="button" onclick="clearPreference()">Clear Preference</button>
+      </form>
+
+      <output id="confirmationMessage"></output>
+    </section>
+        
+    <section id="feedback">
+      <h2>Event Feedback</h2>
+
+      <form id="feedbackForm">
+        <label for="phone">Phone Number:</label><br>
+        <input type="text" id="phone" name="phone" placeholder="10-digit number" onblur="validatePhone()" required><br><br>
+
+        <label for="eventSelect">Select Event:</label><br>
+        <select id="eventSelect" onchange="showFee()" required>
+          <option value="">--Choose--</option>
+          <option value="Festival">Festival - $10</option>
+          <option value="Workshop">Workshop - $15</option>
+          <option value="Yoga">Yoga - $5</option>
+        </select><br><br>
+
+        <p id="feeInfo"></p>
+
+        <label for="feedbackText">Your Feedback:</label><br>
+        <textarea id="feedbackText" rows="4" cols="50" placeholder="Write your feedback..." onkeyup="countChars()"></textarea>
+        <p>Characters: <span id="charCount">0</span></p><br>
+
+        <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+      </form>
+
+      <h3>Double-click to Enlarge</h3>
+      <img src="images/event1.jpg" alt="Event" title="Double-click to Enlarge" id="eventImage" ondblclick="enlargeImage()" style="width:200px; border: 2px solid #aaa;">
+    </section>
+       
+    <section id="videoInvite">
+      <h2>Event Promo Video</h2>
+
+      <video id="promoVideo" width="480" controls oncanplay="videoReady()">
+        <source src="media/event_promo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <p id="videoMessage"></p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Have questions? Reach out to your local city council here.</p>
+    </section>
+
+  </main>
+  <script>
+  function showConfirmation(event) {
+    event.preventDefault(); 
+    const name = document.getElementById('name').value;
+    const output = document.getElementById('confirmationMessage');
+    output.innerHTML = `Thank you, <strong>${name}</strong>, for registering! We'll contact you soon.`;
+  }
+  function validatePhone() {
+    const phone = document.getElementById("phone").value;
+    if (!/^\d{10}$/.test(phone)) {
+      alert("Please enter a valid 10-digit phone number.");
+    }
+  }
+
+  function showFee() {
+    const select = document.getElementById("eventSelect");
+    const feeInfo = document.getElementById("feeInfo");
+    feeInfo.textContent = "Selected Fee: " + select.options[select.selectedIndex].text.split('-')[1].trim();
+  }
+
+  function countChars() {
+    const text = document.getElementById("feedbackText").value;
+    document.getElementById("charCount").textContent = text.length;
+  }
+
+  function submitFeedback() {
+    alert("Thank you for your feedback!");
+  }
+
+  function enlargeImage() {
+    const img = document.getElementById("eventImage");
+    img.style.width = img.style.width === "400px" ? "200px" : "400px";
+  }
+  function videoReady() {
+    document.getElementById("videoMessage").textContent = "🎬 Video ready to play!";
+  }
+
+  window.onbeforeunload = function () {
+    const form = document.getElementById("eventForm");
+    const feedbackForm = document.getElementById("feedbackForm");
+
+    if (form && (
+        form.name.value ||
+        form.email.value ||
+        form.date.value ||
+        form.type.value ||
+        form.message.value
+      ) ||
+      feedbackForm && (
+        feedbackForm.phone.value ||
+        feedbackForm.feedbackText.value
+      )
+    ) {
+      return "You have unsaved changes. Are you sure you want to leave?";
+    }
+  };
+  function savePreference() {
+    const eventType = document.getElementById("type").value;
+    if (eventType) {
+      localStorage.setItem("preferredEvent", eventType);
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const preferred = localStorage.getItem("preferredEvent");
+    const typeDropdown = document.getElementById("type");
+
+    if (preferred && typeDropdown) {
+      typeDropdown.value = preferred;
+
+      if (!sessionStorage.getItem("preferenceShown")) {
+        alert(`Welcome back! We've preselected your preferred event: ${preferred}`);
+        sessionStorage.setItem("preferenceShown", "true");
+      }
+    }
+  });
+
+  function clearPreference() {
+    // added a break point here to check inspect storage information.
+    localStorage.removeItem("preferredEvent");
+    alert("Preference cleared. The dropdown will no longer be preselected.");
+  }
+  
+const events = [
+  { name: "Spring Festival", latitude: 12.9352, longitude: 77.6144 },
+  { name: "Art Show", latitude: 12.9716, longitude: 77.5946 },
+  { name: "Cleanup Drive", latitude: 12.9081, longitude: 77.6476 },
+    { name: "food Drive", latitude: 12.9001, longitude: 77.6006 },
+      { name: "Movie Night", latitude: 12.9256, longitude: 77.6356 },
+        { name: "Yoga", latitude: 12.9012, longitude: 77.5476 }
+];
+
+document.getElementById('findNearbyBtn').addEventListener('click', () => {
+  const locationInfo = document.getElementById('locationInfo');
+  const nearestEventDisplay = document.getElementById('nearestEvent');
+  locationInfo.innerHTML = 'Locating...';
+  nearestEventDisplay.innerHTML = '';
+
+  if (!navigator.geolocation) {
+    locationInfo.innerHTML = 'Geolocation is not supported by your browser.';
+    return;
+  }
+
+  const options = {
+    enableHighAccuracy: true,
+    timeout: 10000,
+    maximumAge: 0
+  };
+
+  function success(position) {
+    const lat = position.coords.latitude;
+    const lng = position.coords.longitude;
+    // print and analyze the values of lan,lng to check the correctness to resolve error 
+    console.log(lat)
+    console.log(lng)
+    locationInfo.innerHTML = `Your Location: Latitude ${lat.toFixed(5)}, Longitude ${lng.toFixed(5)}`;
+
+    const nearest = findNearestEvent(lat, lng, events);
+    if (nearest) {
+      nearestEventDisplay.innerHTML = `📍 Nearest Event: <strong>${nearest.name}</strong> (${nearest.distance.toFixed(2)} km away)`;
+    } else {
+      nearestEventDisplay.innerHTML = 'No events found.';
+    }
+  }
+
+  function error(err) {
+    switch (err.code) {
+      case err.PERMISSION_DENIED:
+        locationInfo.innerHTML = 'Permission denied. Please allow location access.';
+        break;
+      case err.POSITION_UNAVAILABLE:
+        locationInfo.innerHTML = 'Location information is unavailable.';
+        break;
+      case err.TIMEOUT:
+        locationInfo.innerHTML = 'Location request timed out.';
+        break;
+      default:
+        locationInfo.innerHTML = 'An unknown error occurred.';
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition(success, error, options);
+});
+
+
+function calculateDistance(lat1, lon1, lat2, lon2) {
+  const R = 6371; // km
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * Math.PI / 180) *
+    Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLon / 2) *
+    Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+
+function findNearestEvent(userLat, userLng, eventList) {
+  let nearest = null;
+  let minDistance = Infinity;
+
+  eventList.forEach(event => {
+    const dist = calculateDistance(userLat, userLng, event.latitude, event.longitude);
+    if (dist < minDistance) {
+      minDistance = dist;
+      nearest = { ...event, distance: dist };
+    }
+  });
+
+  return nearest;
+}
+
+
+</script>
+
+  <footer>
+    <p>&copy; 2025 Local City Council. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
