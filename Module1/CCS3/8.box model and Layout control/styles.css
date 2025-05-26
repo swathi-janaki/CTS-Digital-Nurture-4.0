@@ -1,0 +1,292 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@400;500&display=swap');
+
+/* General body styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6f2ff; /* Fallback light blue */
+  background-image: url('../images/b1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: rgba(20, 20, 20, 0.9);
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+p,
+li,
+label,
+figcaption {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+  color: rgba(20, 1, 19, 0.85);
+}
+
+/* Grouped styling for h3 and p (also override h3 family for consistency) */
+h3, p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #080505;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+/* Welcome banner */
+#welcomeBanner {
+  background-color: #c432e9;
+  color: rgb(248, 239, 239);
+  padding: 1rem;
+  text-align: center;
+  font-size: 3.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Highlighted text */
+.highlight {
+  background-color: rgb(250, 247, 250);
+  font-weight: bold;
+  padding: 0.2rem 0.4rem;
+  text-align: center;
+}
+
+/* Image styling for gallery */
+.gallery-img {
+  width: 100%;
+  max-width: 200px;
+  border: 3px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Caption styling */
+figcaption {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #0c0a0a;
+}
+
+/* Form styling */
+form {
+  max-width: 600px;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1 10px rgba(0,0,0,0.1);
+  margin: 0 auto;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* Input styling */
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Highlight focused fields */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #c432e9;
+  border-color: #8e2bc2;
+}
+
+/* Submit button */
+button {
+  background-color: rgba(88, 5, 109, 0.85);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content;
+  margin: 0 auto;
+  display: block;
+}
+
+button:hover {
+  background-color: rgb(1, 8, 15);
+}
+
+/* Output messages */
+output {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: green;
+}
+
+/* Feedback images */
+#feedback img {
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+/* Navigation styling */
+nav {
+  background-color: #333;
+  padding: 0.5rem 1rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+nav a {
+  color: #004080;
+}
+
+nav a:hover {
+  color: #66ccff;
+}
+
+/* Link pseudo-classes */
+nav ul li a:link {
+  color: #004080;
+}
+
+nav ul li a:visited {
+  color: #551A8B;
+}
+
+nav ul li a:hover,
+nav ul li a:active {
+  background-color: #66ccff;
+  color: #001f33;
+}
+
+/* Promotional video */
+#promoVideo {
+  border: 4px solid #ccc;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Message below video */
+#videoMessage {
+  color: green;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* Event card container */
+.eventcard, .eventCard {
+  display: inline-block;
+  width: fit-content;
+  margin: 20px;
+  padding: 15px;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Apply extra spacing and box styling for layout clarity */
+.eventCard {
+  margin: 25px;
+  padding: 20px;
+  border: 2px dashed #9933cc;
+  outline: 3px solid rgba(155, 89, 182, 0.3);
+}
+
+/* Images inside cards */
+.eventcard img,
+.eventCard img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Title below image */
+.eventcard p {
+  margin-top: 8px;
+  font-style: italic;
+  color: #333;
+}
+
+/* Section header with gradient */
+section h2 {
+  background: linear-gradient(90deg, #4d0357, #c432e9);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Example of hidden vs none */
+.hidden-element {
+  visibility: hidden; /* element remains but is invisible */
+}
+
+.none-element {
+  display: none; /* element is removed from layout flow */
+}

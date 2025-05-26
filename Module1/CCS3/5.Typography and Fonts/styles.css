@@ -1,19 +1,65 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@400;500&display=swap');
 
+/* General body styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  
+  justify-content: center;
+  align-items: center;
+  background-color: #e6f2ff; /* Fallback light blue */
+  background-image: url('../images/b1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: rgba(20, 20, 20, 0.9);
+ 
+}
+   /* Semi-dark text color */
+
+/* 5. Typography: Fonts and Text */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+p,
+li,
+label,
+figcaption {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+  color: rgba(20, 1, 19, 0.85);
+}
 
 /* Style for the top welcome dashboard */
 #welcomeBanner {
-  background-color: #b700ff;
-  color: white;
+  background-color:#c432e9;
+  color: rgb(248, 239, 239);
   padding: 1rem;
   text-align: center;
-}
-
+  font-size: 3.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+} 
 
 /* Style for highlighted elements */
 .highlight {
-  background-color: rgb(233, 19, 215);
+  background-color: rgb(250, 247, 250);
   font-weight: bold;
   padding: 0.2rem 0.4rem;
+  text-align: center;
 }
 
 /* Style for images of events in the gallery */
@@ -24,7 +70,7 @@
   border-radius: 8px;
 }
 
-/* General table styling for  complete layout */
+/* General table styling for complete layout */
 table {
   width: 100%;
   text-align: center;
@@ -35,16 +81,17 @@ table {
 figcaption {
   margin-top: 0.5rem;
   font-style: italic;
-  color: #555;
+  color: #0c0a0a;
 }
 
-/* Style for the form  */
+/* Style for the form */
 form {
   max-width: 600px;
   background-color: #f8f9fa;
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 1 10px rgba(0,0,0,0.1);
+   margin: 0 auto; 
 }
 
 /* Label styling */
@@ -63,19 +110,29 @@ button {
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
 }
 
 /* Style for the submit button */
 button {
-  background-color: #007BFF;
+  background-color: rgba(88, 5, 109, 0.85); 
   color: white;
   border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
+  width: fit-content;
+  margin: 0 auto;              /* centers it inside a block-level container */
+  display: block;
+  padding: 10px 20px; 
+  
 }
 
 /* Hover effect for buttons */
 button:hover {
-  background-color: #0056b3;
+  background-color: rgb(1, 8, 15); 
 }
 
 /* Style for form output messages */
@@ -86,14 +143,14 @@ output {
   color: green;
 }
 
-
-/*  styling for feedback images */
+/* Styling for feedback images */
 #feedback img {
   transition: 0.3s ease-in-out;
   cursor: pointer;
+   margin: 0 auto; 
 }
 
-/*  styling for navigation bar */
+/* Styling for navigation bar */
 nav {
   background-color: #333;
   padding: 0.5rem 1rem;
@@ -108,7 +165,7 @@ nav ul {
   justify-content: center;
 }
 
-/* individual list items in nav bar */
+/* Individual list items in nav bar */
 nav ul li {
   margin: 0 15px;
 }
@@ -128,6 +185,15 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
+/* Navigation links with brand colors */
+nav a {
+  color: #004080; 
+}
+
+nav a:hover {
+  color: #66ccff; 
+}
+
 /* Style for the promotional video element of event in gallery */
 #promoVideo {
   border: 4px solid #ccc;
@@ -135,17 +201,17 @@ nav ul li a:hover {
   margin-top: 10px;
 }
 
-/*  style for Message below the promo video */
+/* Style for message below the promo video */
 #videoMessage {
   color: green;
   font-weight: bold;
   margin-top: 0.5rem;
 }
-/* styling card for events */
 
+/* Styling card for events */
 .eventcard {
   display: inline-block;
-  width: fit-content; /* Auto size to fit content */
+  width: fit-content;
   margin: 20px;
   padding: 10px;
   background: white;
@@ -168,64 +234,27 @@ nav ul li a:hover {
   font-style: italic;
   color: #333;
 }
-/* shared styles for both h3 and p tags*/
+
+/* Shared styles for both h3 and p tags */
 h3, p {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #444;
+  color: #080505;
   line-height: 1.6;
   margin-bottom: 0.75rem;
 }
-/*all h2 tags style */
+
+/* All h2 tags style */
 h2 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  color: #333;
-}
-
-/* background image with color */
-body {
-  background-color: #e6f2ff; /* Fallback light blue */
-  background-image: url('../images/bg1.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: rgba(20, 20, 20, 0.9); /* Semi-dark text color */
+  color: #f8f4f4;
 }
 
 /* Section headers with gradient background */
-
-
-/* Navigation links with brand colors */
-nav a {
-  color: #004080; 
-}
 section h2 {
-  background: linear-gradient(90deg, #004080, #66ccff); /* Navy to light blue */
+  background: linear-gradient(90deg, #4d0357, #c432e9);
   color: white;
   padding: 10px 15px;
   border-radius: 5px;
-}
-
-nav a:hover {
-  color: #66ccff; 
-}
-
-/* Button with brand styling */
-button {
-  background-color: rgba(0, 64, 128, 0.85); 
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: rgba(0, 64, 128, 1); 
-}
-p,
-li,
-label,
-figcaption {
-  color: rgba(34, 34, 34, 0.85);
+  text-align: center;
 }
